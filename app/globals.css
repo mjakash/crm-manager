@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+
+  --color-background: #F0FDF4;
+  /* Light green tint/grey */
+  --color-foreground: #064E3B;
+  /* Dark green text */
+
+  --color-primary: #047857;
+  /* Emerald 700 */
+  --color-primary-foreground: #FFFFFF;
+
+  --color-accent: #D1FAE5;
+  /* Emerald 100 */
+  --color-accent-foreground: #065F46;
+
+  --color-secondary: #FB923C;
+  /* Orange 400 */
+  --color-secondary-foreground: #FFFFFF;
+
+  --color-card: #FFFFFF;
+  --color-card-foreground: #064E3B;
+
+  --color-muted: #F3F4F6;
+  --color-muted-foreground: #9CA3AF;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+}
+
+body {
+  background-color: #E2E8F0;
+  /* Outer background */
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.sidebar-item-active {
+  background-color: #BEF264;
+  /* Lime/Green active state */
+  color: #1A2E05;
+}
