@@ -1,8 +1,23 @@
-import { Bell, Gift, Search, ChevronDown } from "lucide-react";
+"use client";
+
+import { Bell, Gift, Search, ChevronDown, Menu } from "lucide-react";
+import { MobileSidebar } from "./mobile-sidebar";
+import { useSidebar } from "@/context/sidebar-context";
 
 export function Header() {
+    const { toggleMobileSidebar } = useSidebar();
+
     return (
         <header className="h-20 px-8 flex items-center justify-between border-b border-gray-100/50 bg-white/50 backdrop-blur-sm sticky top-0 z-10">
+
+            {/* Mobile Trigger */}
+            <button
+                onClick={toggleMobileSidebar}
+                className="sm:hidden p-2 mr-2 text-gray-500 hover:bg-gray-100 rounded-lg"
+            >
+                <Menu size={24} />
+            </button>
+
             {/* Search */}
             <div className="flex items-center gap-3 bg-white border border-gray-100 rounded-lg px-4 py-2 w-96 shadow-sm focus-within:ring-2 focus-within:ring-primary/5 focus-within:border-primary/20 transition-all">
                 <Search className="w-4 h-4 text-gray-400" />
@@ -35,7 +50,7 @@ export function Header() {
                     <div className="w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center text-xs font-medium">
                         JP
                     </div>
-                    <div className="text-left hidden md:block">
+                    <div className="text-left hidden sm:block">
                         <div className="text-sm font-medium text-gray-900 leading-none mb-1">James Passaquindici</div>
                         <div className="text-[10px] text-gray-500 leading-none">ID: 4827682</div>
                     </div>
