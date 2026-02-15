@@ -30,9 +30,9 @@ export function TaskFilters() {
                     <button
                         key={filter}
                         onClick={() => setActiveFilter(filter)}
-                        className={`px-4 py-2 rounded-lg text-xs font-medium transition-colors ${activeFilter === filter
-                                ? 'bg-[#F43F5E] text-white shadow-md' // Rose 500
-                                : 'bg-[#93C5FD] text-gray-900 hover:bg-blue-300' // Blue 300
+                        className={`px-4 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${activeFilter === filter
+                            ? 'bg-[#F43F5E] text-white shadow-md' // Rose 500
+                            : 'bg-[#93C5FD] text-gray-900 hover:bg-blue-300' // Blue 300
                             }`}
                     >
                         {filter}

@@ -82,15 +82,15 @@ export function LeaveFilter() {
                     </div>
 
                     <div className="flex flex-wrap items-center gap-3">
-                        <button className="flex items-center gap-2 px-6 py-2.5 bg-[#0EA5E9] text-white rounded-xl font-medium hover:bg-[#0284C7] transition-colors shadow-sm shadow-blue-200">
+                        <button className="flex items-center gap-2 px-6 py-2.5 bg-[#0EA5E9] text-white rounded-xl font-medium hover:bg-[#0284C7] transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-sm shadow-blue-200">
                             <Filter size={18} />
                             FILTER
                         </button>
-                        <button className="flex items-center gap-2 px-6 py-2.5 bg-[#EAB308] text-white rounded-xl font-medium hover:bg-[#CA8A04] transition-colors shadow-sm shadow-yellow-200">
+                        <button className="flex items-center gap-2 px-6 py-2.5 bg-[#EAB308] text-white rounded-xl font-medium hover:bg-[#CA8A04] transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-sm shadow-yellow-200">
                             <RotateCcw size={18} />
                             RESET FILTER
                         </button>
-                        <button className="flex items-center gap-2 px-6 py-2.5 bg-[#2DD4BF] text-white rounded-xl font-medium hover:bg-[#14B8A6] transition-colors shadow-sm shadow-teal-200">
+                        <button className="flex items-center gap-2 px-6 py-2.5 bg-[#2DD4BF] text-white rounded-xl font-medium hover:bg-[#14B8A6] transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-sm shadow-teal-200">
                             <Download size={18} />
                             DOWNLOAD CSV
                         </button>

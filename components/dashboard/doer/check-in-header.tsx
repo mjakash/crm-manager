@@ -10,7 +10,7 @@ export function CheckInHeader() {
         <div className="flex items-center justify-between mb-6">
             <button
                 onClick={() => setIsCheckedIn(!isCheckedIn)}
-                className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-white shadow-lg transition-all hover:scale-105 active:scale-95 ${isCheckedIn ? 'bg-[#34D399]' : 'bg-gray-400'}`} // Emerald 400
+                className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-white shadow-lg transition-all hover:scale-105 active:scale-95 cursor-pointer ${isCheckedIn ? 'bg-[#34D399]' : 'bg-gray-400'}`} // Emerald 400
             >
                 {isCheckedIn ? 'CHECK IN' : 'CHECK OUT'}
                 <LogIn className="w-5 h-5 rotate-180" /> {/* Simulate "Check In" icon */}

@@ -98,16 +98,16 @@ export function UserFilter() {
                     </div>
 
                     <div className="flex flex-wrap gap-3">
-                        <button className="px-6 py-2 bg-[#06B6D4] text-white text-sm font-medium rounded-md hover:bg-[#0891B2] transition-colors uppercase">
+                        <button className="px-6 py-2 bg-[#06B6D4] text-white text-sm font-medium rounded-md hover:bg-[#0891B2] transition-all cursor-pointer hover:scale-105 active:scale-95 uppercase">
                             Filter
                         </button>
-                        <button className="px-6 py-2 bg-[#FBBF24] text-white text-sm font-medium rounded-md hover:bg-[#D97706] transition-colors uppercase">
+                        <button className="px-6 py-2 bg-[#FBBF24] text-white text-sm font-medium rounded-md hover:bg-[#D97706] transition-all cursor-pointer hover:scale-105 active:scale-95 uppercase">
                             Reset Filter
                         </button>
-                        <button className="px-6 py-2 bg-[#10B981] text-white text-sm font-medium rounded-md hover:bg-[#059669] transition-colors uppercase">
+                        <button className="px-6 py-2 bg-[#10B981] text-white text-sm font-medium rounded-md hover:bg-[#059669] transition-all cursor-pointer hover:scale-105 active:scale-95 uppercase">
                             Download CSV
                         </button>
-                        <button className="px-6 py-2 bg-[#3B82F6] text-white text-sm font-medium rounded-md hover:bg-[#2563EB] transition-colors uppercase">
+                        <button className="px-6 py-2 bg-[#3B82F6] text-white text-sm font-medium rounded-md hover:bg-[#2563EB] transition-all cursor-pointer hover:scale-105 active:scale-95 uppercase">
                             Privilege Details
                         </button>
                     </div>

@@ -28,7 +28,7 @@ export function TaskDistribution({ title, data, totalLabel = "Total" }: TaskDist
                             <button
                                 key={p}
                                 onClick={() => setPeriod(p)}
-                                className={`px-2 py-0.5 text-xs font-medium rounded-md transition-all ${period === p
+                                className={`px-2 py-0.5 text-xs font-medium rounded-md transition-all cursor-pointer ${period === p
                                     ? 'bg-white shadow-sm text-gray-900'
                                     : 'text-gray-500 hover:text-gray-900'
                                     }`}
