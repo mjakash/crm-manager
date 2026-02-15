@@ -51,7 +51,7 @@ export function UserFilter() {
 
                         {/* Role */}
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-gray-700">Role In MIDAP:</label>
+                            <label className="text-sm font-medium text-gray-700">Role:</label>
                             <select className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white">
                                 <option value="">All</option>
                                 <option value="admin">Admin</option>

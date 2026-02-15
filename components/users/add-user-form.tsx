@@ -76,7 +76,7 @@ export function AddUserForm() {
                 {/* Role */}
                 <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700 flex items-center gap-1">
-                        Role In MIDAP <span className="text-red-500">*</span>
+                        Role <span className="text-red-500">*</span>
                         <Info size={14} className="text-gray-400" />
                     </label>
                     <select className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white">

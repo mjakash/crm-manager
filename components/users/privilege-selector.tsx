@@ -96,11 +96,34 @@ const privilegeGroups: PrivilegeGroup[] = [
 ];
 
 export function PrivilegeSelector() {
-    // In a real app, state would be managed here or lifted up
+    // State to track selected privileges. Key format: "GroupName-ItemName"
     const [selected, setSelected] = useState<Record<string, boolean>>({});
 
-    const toggleGroup = (groupName: string, items: string[]) => {
-        // Simple toggle logic example
+    const toggleGroup = (group: PrivilegeGroup) => {
+        const allSelected = group.items.every(item => selected[`${group.name}-${item}`]);
+        const newState = { ...selected };
+
+        group.items.forEach(item => {
+            newState[`${group.name}-${item}`] = !allSelected;
+        });
+
+        setSelected(newState);
+    };
+
+    const toggleItem = (groupName: string, item: string) => {
+        setSelected(prev => ({
+            ...prev,
+            [`${groupName}-${item}`]: !prev[`${groupName}-${item}`]
+        }));
+    };
+
+    const isGroupSelected = (group: PrivilegeGroup) => {
+        return group.items.every(item => selected[`${group.name}-${item}`]);
+    };
+
+    const isGroupIndeterminate = (group: PrivilegeGroup) => {
+        const selectedCount = group.items.filter(item => selected[`${group.name}-${item}`]).length;
+        return selectedCount > 0 && selectedCount < group.items.length;
     };
 
     return (
@@ -117,8 +140,15 @@ export function PrivilegeSelector() {
                                 id={`group-${group.name}`}
                                 type="checkbox"
                                 className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+                                checked={isGroupSelected(group)}
+                                ref={input => {
+                                    if (input) {
+                                        input.indeterminate = isGroupIndeterminate(group);
+                                    }
+                                }}
+                                onChange={() => toggleGroup(group)}
                             />
-                            <label htmlFor={`group-${group.name}`} className="text-sm font-bold text-gray-700 capitalize">
+                            <label htmlFor={`group-${group.name}`} className="text-sm font-bold text-gray-700 capitalize cursor-pointer select-none">
                                 {group.name}
                             </label>
                         </div>
@@ -129,8 +159,10 @@ export function PrivilegeSelector() {
                                         id={`${group.name}-${item}`}
                                         type="checkbox"
                                         className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+                                        checked={!!selected[`${group.name}-${item}`]}
+                                        onChange={() => toggleItem(group.name, item)}
                                     />
-                                    <label htmlFor={`${group.name}-${item}`} className="text-xs text-gray-600">
+                                    <label htmlFor={`${group.name}-${item}`} className="text-xs text-gray-600 cursor-pointer select-none">
                                         {item}
                                     </label>
                                 </div>
