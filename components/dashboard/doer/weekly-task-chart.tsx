@@ -26,17 +26,18 @@ export function WeeklyTaskChart() {
 
             <div className="flex-1 flex items-center justify-center relative">
                 <div className="absolute right-0 top-4 space-y-2">
-                    <div className="flex items-center gap-2">
-                        <div className="w-2.5 h-2.5 bg-[#34D399] rounded-sm"></div>
-                        <span className="text-[10px] text-gray-500">Complete</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <div className="w-2.5 h-2.5 bg-[#FBBF24] rounded-sm"></div>
-                        <span className="text-[10px] text-gray-500">Pending</span>
-                    </div>
+                    {data.map((item) => (
+                        <div key={item.name} className="flex items-center gap-2">
+                            <div
+                                className="w-2.5 h-2.5 rounded-sm"
+                                style={{ backgroundColor: item.color }}
+                            />
+                            <span className="text-[10px] text-gray-500">{item.name}</span>
+                        </div>
+                    ))}
                 </div>
 
-                <div className="w-32 h-32 relative">
+                <div className="w-32 h-32 relative mr-10">
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                             <Pie
@@ -51,7 +52,7 @@ export function WeeklyTaskChart() {
                                     <Cell key={`cell-${index}`} fill={entry.color} strokeWidth={0} />
                                 ))}
                                 <Label
-                                    value="90.4%"
+                                    value={`${data[0].value}%`}
                                     position="center"
                                     className="text-xs font-bold fill-white"
                                 />
@@ -59,7 +60,7 @@ export function WeeklyTaskChart() {
                         </PieChart>
                     </ResponsiveContainer>
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none text-white text-xs font-bold">
-                        90.4%
+                        {data[0].value}%
                     </div>
                 </div>
             </div>
